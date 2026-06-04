@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>L'Atelier Business by LG — Stratégie · IA · Business Humain</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,300;1,9..144,400&family=Instrument+Sans:wght@400;500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+--cream:#F5F0E8;
+--terracotta:#C4622D;
+--terracotta-light:#E8A882;
+--near-black:#1A1714;
+--near-black-soft:#2C2620;
+--muted:#8C7B6E;
+--border:#E0D5C5;
+}
+body{background:var(--cream);color:var(--near-black);font-family:'Instrument Sans',sans-serif;min-height:100vh;overflow-x:hidden}
+
+nav{display:flex;justify-content:space-between;align-items:center;padding:1.5rem 3rem;border-bottom:0.5px solid var(--border);position:sticky;top:0;background:var(--cream);z-index:100}
+.nav-logo{font-family:'Fraunces',serif;font-size:1rem;font-weight:400;letter-spacing:0.02em}
+.nav-logo .A,.nav-logo .B{color:var(--terracotta);font-weight:500}
+.nav-links{display:flex;gap:2rem;list-style:none}
+.nav-links a{font-size:0.8rem;color:var(--muted);text-decoration:none;letter-spacing:0.08em;text-transform:uppercase;transition:color 0.2s}
+.nav-links a:hover{color:var(--near-black)}
+.nav-cta{font-size:0.8rem;letter-spacing:0.08em;text-transform:uppercase;color:var(--terracotta);text-decoration:none;border-bottom:1px solid var(--terracotta);padding-bottom:1px;transition:opacity 0.2s}
+.nav-cta:hover{opacity:0.7}
+
+.hero{padding:5rem 3rem 3rem;text-align:center;max-width:900px;margin:0 auto}
+.hero-brand{font-family:'Fraunces',serif;font-size:clamp(2.2rem,5vw,3.5rem);font-weight:300;line-height:1.1;letter-spacing:-0.02em;margin-bottom:1rem}
+.hero-brand .A,.hero-brand .B{color:var(--terracotta)}
+.hero-tagline{font-family:'DM Mono',monospace;font-size:0.75rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--terracotta);margin-bottom:1.5rem}
+.hero-intro{font-family:'Fraunces',serif;font-size:clamp(1rem,2vw,1.2rem);font-weight:300;font-style:italic;color:var(--near-black-soft);line-height:1.7;max-width:700px;margin:0 auto}
+
+.offres-section{padding:4rem 3rem;max-width:1100px;margin:0 auto}
+.offres-intro{max-width:700px;margin:0 auto 4rem;text-align:center}
+.offres-intro-text{font-family:'Fraunces',serif;font-size:1.05rem;font-weight:300;line-height:1.9;color:var(--near-black-soft)}
+.offres-intro-text p{margin-bottom:1rem}
+
+.offres-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1.5rem}
+.offre-card{border:0.5px solid var(--border);border-radius:2px;padding:2.5rem 2rem;transition:border-color 0.3s,transform 0.3s}
+.offre-card:hover{border-color:var(--terracotta);transform:translateY(-3px)}
+.offre-card.sprint{grid-column:1/-1;display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start}
+.offre-number{font-family:'DM Mono',monospace;font-size:0.7rem;color:var(--terracotta);letter-spacing:0.1em;margin-bottom:1.5rem}
+.offre-name{font-family:'Fraunces',serif;font-size:1.5rem;font-weight:400;margin-bottom:0.4rem;line-height:1.2}
+.offre-keywords{font-family:'DM Mono',monospace;font-size:0.62rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--terracotta);margin-bottom:1.5rem}
+.offre-desc{font-size:0.85rem;color:var(--muted);line-height:1.7;margin-bottom:1.5rem}
+.offre-steps{display:flex;flex-direction:column;gap:0.5rem;margin-bottom:1.5rem}
+.offre-step{font-family:'DM Mono',monospace;font-size:0.65rem;letter-spacing:0.08em;color:var(--muted);padding-left:0.75rem;border-left:1px solid var(--border)}
+
+.cest-pour-toi{background:var(--near-black);border-radius:2px;padding:1.25rem 1.5rem}
+.cest-pour-toi-label{font-family:'DM Mono',monospace;font-size:0.6rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--terracotta-light);margin-bottom:0.5rem}
+.cest-pour-toi-text{font-size:0.82rem;color:#E8D5C0;line-height:1.6;font-style:italic}
+
+.tarif{display:inline-block;margin-top:1.5rem;font-family:'DM Mono',monospace;font-size:0.7rem;letter-spacing:0.08em;color:var(--terracotta);border:0.5px solid var(--terracotta-light);padding:4px 12px;border-radius:1px}
+
+.section-divider{border:none;border-top:0.5px solid var(--border);margin:0 3rem}
+
+.about-section{padding:5rem 3rem;max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 2fr;gap:5rem;align-items:start}
+.about-label{font-family:'DM Mono',monospace;font-size:0.7rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--terracotta);margin-bottom:2rem}
+.about-name{font-family:'Fraunces',serif;font-size:2rem;font-weight:300;margin-bottom:0.5rem}
+.about-title{font-size:0.85rem;color:var(--muted);line-height:1.6;margin-bottom:2rem}
+.about-stats{display:flex;flex-direction:column;gap:1rem}
+.about-stat{border-left:2px solid var(--terracotta);padding-left:1rem}
+.about-stat-num{font-family:'Fraunces',serif;font-size:1.3rem;font-weight:400;color:var(--terracotta)}
+.about-stat-label{font-size:0.78rem;color:var(--muted)}
+.about-text{font-family:'Fraunces',serif;font-size:1rem;font-weight:300;line-height:1.8;color:var(--near-black-soft)}
+.about-text p{margin-bottom:1.2rem}
+.about-text strong{font-weight:500;color:var(--near-black)}
+.about-quote{border-left:2px solid var(--terracotta);padding-left:1.5rem;margin-top:1.5rem;font-family:'Fraunces',serif;font-size:1rem;font-style:italic;color:var(--near-black-soft);line-height:1.7}
+.about-quote + .about-quote{margin-top:1rem}
+
+.adn-section{padding:4rem 3rem;background:var(--near-black);color:var(--cream)}
+.adn-inner{max-width:1100px;margin:0 auto}
+.adn-label{font-family:'DM Mono',monospace;font-size:0.7rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--terracotta-light);margin-bottom:2rem}
+.adn-title{font-family:'Fraunces',serif;font-size:1.8rem;font-weight:300;margin-bottom:3rem;color:var(--cream)}
+.adn-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem}
+.adn-item{border-top:0.5px solid #3A302A;padding-top:1.5rem}
+.adn-item-title{font-family:'DM Mono',monospace;font-size:0.7rem;letter-spacing:0.1em;text-transform:uppercase;color:var(--terracotta-light);margin-bottom:0.75rem}
+.adn-item-text{font-size:0.85rem;color:#C4B5A5;line-height:1.6}
+
+.cta-section{padding:6rem 3rem;text-align:center;max-width:700px;margin:0 auto}
+.cta-label{font-family:'DM Mono',monospace;font-size:0.7rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--muted);margin-bottom:1.5rem}
+.cta-title{font-family:'Fraunces',serif;font-size:clamp(1.8rem,3vw,2.5rem);font-weight:300;font-style:italic;line-height:1.3;margin-bottom:3rem;color:var(--near-black)}
+.cta-btn{display:inline-block;font-family:'DM Mono',monospace;font-size:0.8rem;letter-spacing:0.15em;text-transform:uppercase;color:var(--cream);background:var(--terracotta);padding:1rem 2.5rem;text-decoration:none;border-radius:1px;transition:opacity 0.2s}
+.cta-btn:hover{opacity:0.85}
+.cta-sub{font-family:'DM Mono',monospace;font-size:0.65rem;letter-spacing:0.08em;color:var(--muted);margin-top:1rem}
+
+footer{padding:2rem 3rem;border-top:0.5px solid var(--border);display:flex;justify-content:space-between;align-items:center}
+.footer-logo{font-family:'Fraunces',serif;font-size:0.85rem;color:var(--muted)}
+.footer-logo .A,.footer-logo .B{color:var(--terracotta)}
+.footer-copy{font-family:'DM Mono',monospace;font-size:0.65rem;color:var(--muted);letter-spacing:0.05em}
+</style>
+</head>
+<body>
+
+<nav>
+  <span class="nav-logo">l'<span class="A">A</span>telier <span class="B">B</span>usiness <em style="font-family:Fraunces,serif;font-weight:300;font-style:italic">by LG</em></span>
+  <ul class="nav-links">
+    <li><a href="#">Les offres</a></li>
+    <li><a href="#">À propos</a></li>
+    <li><a href="#">Ma méthode</a></li>
+    <li><a href="#">Témoignages</a></li>
+  </ul>
+  <a href="#contact" class="nav-cta">Appel découverte gratuit · 30 min →</a>
+</nav>
+
+<section class="hero">
+  <p class="hero-tagline">Stratégie · IA · Business Humain</p>
+  <h1 class="hero-brand">l'<span class="A">A</span>telier <span class="B">B</span>usiness<br><em style="font-style:italic;font-weight:300">by LG</em></h1>
+  <p class="hero-intro">L'accélérateur de croissance qui combine clarté stratégique et mise en lumière de votre valeur humaine ajoutée et de vos zones de génie, le tout soupoudré d'intelligence artificielle, pour que vous deveniez la meilleure version business de vous-même.</p>
+</section>
+
+<section class="offres-section">
+
+  <div class="offres-intro">
+    <div class="offres-intro-text">
+      <p>Mon super-pouvoir : diagnostiquer vite, débusquer les angles morts, et transformer ce qui bloque en levier de croissance.</p>
+      <p>Pas de jargon. Pas de théorie pour faire joli. Mon expertise est terrain, concrète, fiable. Je simplifie, je fluidifie, j'aligne.</p>
+      <p>L'IA n'est pas là pour vous remplacer. Elle est là pour amplifier votre humanité, votre intelligence de décision, votre zone de génie. C'est ça, la différence.</p>
+    </div>
+  </div>
+
+  <div class="offres-grid">
+
+    <div class="offre-card">
+      <p class="offre-number">01</p>
+      <h2 class="offre-name">Expert IA Augmenté</h2>
+      <p class="offre-keywords">Repositionnement stratégique à l'ère de l'IA</p>
+      <p class="offre-desc">Révéler votre valeur humaine ajoutée et repositionner votre promesse pour devenir un expert augmenté par l'IA plutôt qu'un prestataire menacé par elle. Je prends votre expertise métier et je la transforme en avantage concurrentiel concret.</p>
+      <div class="offre-steps">
+        <span class="offre-step">Diagnostic activité et IA</span>
+        <span class="offre-step">Redesign de l'offre et repositionnement</span>
+        <span class="offre-step">Découverte et expérimentation outils IA</span>
+      </div>
+      <div class="cest-pour-toi">
+        <p class="cest-pour-toi-label">C'est pour vous si…</p>
+        <p class="cest-pour-toi-text">Vous utilisez l'IA pour aller plus vite mais vous sentez que vous passez à côté de quelque chose. Vous voulez pas juste "utiliser l'IA" : vous voulez en faire un vrai avantage concurrentiel.</p>
+      </div>
+      <span class="tarif">600 € / mois · 3 mois</span>
+    </div>
+
+    <div class="offre-card">
+      <p class="offre-number">02</p>
+      <h2 class="offre-name">Stratège</h2>
+      <p class="offre-keywords">Clarifier · Structurer · Performer</p>
+      <p class="offre-desc">Transformer votre savoir-faire en un business aligné et rentable. Un accompagnement pour définir un positionnement clair, construire une stratégie commerciale percutante et la mettre en place.</p>
+      <div class="offre-steps">
+        <span class="offre-step">Diagnostic et réalignement d'offre</span>
+        <span class="offre-step">Stratégie acquisition, fidélisation, itération</span>
+        <span class="offre-step">Plan d'action et accompagnement à la mise en place</span>
+      </div>
+      <div class="cest-pour-toi">
+        <p class="cest-pour-toi-label">C'est pour vous si…</p>
+        <p class="cest-pour-toi-text">Votre activité tourne mais elle performe moins qu'avant. Vous voulez une offre qui travaille mieux, pas vous qui travaillez plus.</p>
+      </div>
+      <span class="tarif">500 € / mois · 3 mois</span>
+    </div>
+
+    <div class="offre-card">
+      <p class="offre-number">03</p>
+      <h2 class="offre-name">Architecte</h2>
+      <p class="offre-keywords">Explorer · Innover · Révéler</p>
+      <p class="offre-desc">Repenser, explorer, innover et faire évoluer son business en profondeur. On repart de la vision, des zones de génie, pour construire un modèle qui vous ressemble vraiment.</p>
+      <div class="offre-steps">
+        <span class="offre-step">Audit et mindset : ikigai, vision, zones de génie</span>
+        <span class="offre-step">Exploration de nouveaux modèles économiques</span>
+        <span class="offre-step">Création d'offre, stratégie et mise en place</span>
+      </div>
+      <div class="cest-pour-toi">
+        <p class="cest-pour-toi-label">C'est pour vous si…</p>
+        <p class="cest-pour-toi-text">Votre business marche mais il vous épuise. Vous stagnez, vous doutez, vous avez perdu le fil. Ce qu'il vous faut, c'est un réalignement en profondeur.</p>
+      </div>
+      <span class="tarif">500 € / mois · 6 mois</span>
+    </div>
+
+    <div class="offre-card sprint">
+      <div>
+        <p class="offre-number">04</p>
+        <h2 class="offre-name">Sprint · 2h</h2>
+        <p class="offre-keywords">Stratégie · IA · Business · En live</p>
+        <p class="offre-desc">Deux heures avec moi : stratégie, offre, IA ou les trois. Vous repartez avec des idées claires et des actions concrètes. Je pilote avec vous, en live, sur ce qui compte vraiment.</p>
+        <span class="tarif">250 €</span>
+      </div>
+      <div class="cest-pour-toi" style="align-self:center">
+        <p class="cest-pour-toi-label">C'est pour vous si…</p>
+        <p class="cest-pour-toi-text">Vous voulez avancer vite, sans vous noyer dans un accompagnement long. Un regard extérieur, des décisions claires, des actions immédiates.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<hr class="section-divider">
+
+<section class="about-section">
+  <div>
+    <p class="about-label">Qui suis-je</p>
+    <h2 class="about-name">Laetitia<br>Gabard</h2>
+    <p class="about-title">Stratège business et IA</p>
+    <div class="about-stats">
+      <div class="about-stat">
+        <div class="about-stat-num">30 ans</div>
+        <div class="about-stat-label">d'expérience terrain</div>
+      </div>
+      <div class="about-stat">
+        <div class="about-stat-num">Ex-dirigeante</div>
+        <div class="about-stat-label">e-commerce</div>
+      </div>
+      <div class="about-stat">
+        <div class="about-stat-num">Certifiée IA</div>
+        <div class="about-stat-label">IAG · Claude · ChatGPT</div>
+      </div>
+    </div>
+  </div>
+  <div class="about-text">
+    <p>Bonjour, je suis Laetitia. À 49 ans, j'ai vécu toutes les révolutions technologiques depuis 1995 : du Minitel à l'IA générative. Je suis un caméléon relationnel et une commerciale instinctive, avec des valeurs fortes : travail bien fait, exigence, justesse, respect de la parole donnée.</p>
+    <p>Je démarre à 18 ans, sans diplôme. Pendant 8 ans, j'enchaîne plus de quinze postes dans des univers radicalement différents. À chaque fois, je dois comprendre vite : les codes, les gens, les missions, les environnements. Ensuite, 10 ans commerciale terrain, objectifs dépassés années après années. Pas parce que je suis une bonne vendeuse au sens classique, mais parce que je comprends ce dont les gens ont besoin avant même qu'ils ne le formulent.</p>
+    <p>En 2012, je rachète une société e-commerce. 250 000€ de chiffre d'affaires, un seul salarié. Je scale à 1,2 million et dix personnes. Douze ans à piloter, décider, tenir, gérer l'imprévu. Et puis le tournant : Covid, piratage, crises. Résultat : une liquidation. Je me remets en question, je découvre l'IA, et je prends la décision de mettre toute cette expérience au service des autres.</p>
+    <p><strong>Je ne suis pas une technicienne. Je suis une stratège.</strong> Je comprends naturellement les gens, les situations, ce qui bloque, ce qui rassure, ce qui déclenche une décision.</p>
+    <div class="about-quote">Je ne rends pas vendable n'importe quoi.<br>Je rends vendable ce qui mérite de l'être.</div>
+    <div class="about-quote">Ce qui me rend efficace, ce n'est pas une méthode ni un outil. C'est ma capacité à détecter les potentiels, et à trouver des voies qui font sens et qui tiennent sur le marché.</div>
+  </div>
+</section>
+
+<section class="adn-section">
+  <div class="adn-inner">
+    <p class="adn-label">L'ADN de l'Atelier Business</p>
+    <h2 class="adn-title">Ce qui me différencie</h2>
+    <div class="adn-grid">
+      <div class="adn-item">
+        <p class="adn-item-title">Mon super-pouvoir</p>
+        <p class="adn-item-text">Diagnostiquer vite, débusquer les angles morts, explorer, innover et transformer. Je vois ce qui bloque avant même que vous le formuliez.</p>
+      </div>
+      <div class="adn-item">
+        <p class="adn-item-title">Pas de jargon</p>
+        <p class="adn-item-text">Je parle business, IA ou marketing, mais avec vos mots. Si vous ne comprenez pas, ça ne sert à rien. Pas de théorie pour faire joli : mon expertise est terrain, concrète, fiable.</p>
+      </div>
+      <div class="adn-item">
+        <p class="adn-item-title">Ma vision de l'IA</p>
+        <p class="adn-item-text">Ce n'est pas un outil qui vous remplace. C'est un levier qui amplifie votre humanité et votre capacité de décision et d'innovation.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-section" id="contact">
+  <p class="cta-label">Prochaine étape</p>
+  <h2 class="cta-title">Vous vous reconnaissez ?<br>On en parle.</h2>
+  <a href="#" class="cta-btn">Appel découverte gratuit · 30 min →</a>
+  <p class="cta-sub">Sans engagement · On échange sur votre situation</p>
+</section>
+
+<footer>
+  <span class="footer-logo">l'<span class="A">A</span>telier <span class="B">B</span>usiness <em style="font-style:italic">by LG</em></span>
+  <span class="footer-copy">© 2026 · AB by LG · Tous droits réservés</span>
+</footer>
+
+</body>
+</html>
